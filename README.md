@@ -151,9 +151,19 @@ npm run dev
 
 ### Environment Variables
 ```bash
-NEXT_PUBLIC_API_BASE_URL=your_api_base_url
-NEXT_PUBLIC_AUTH_LOGIN_ENDPOINT=/api/auth/login.php
-NEXT_PUBLIC_AUTH_REGISTER_ENDPOINT=/api/auth/register.php
+# E-commerce API Configuration
+NEXT_PUBLIC_API_BASE_URL=https://globosoft.co.uk/ecommerce-api
+
+# API Endpoints
+NEXT_PUBLIC_API_PRODUCTS_LIST=/api/products/list.php
+NEXT_PUBLIC_API_PRODUCTS_DETAILS=/api/products/details.php
+NEXT_PUBLIC_API_AUTH_LOGIN=/api/auth/login.php
+NEXT_PUBLIC_API_AUTH_REGISTER=/api/auth/register.php
+NEXT_PUBLIC_API_CART_ADD=/api/cart/add.php
+NEXT_PUBLIC_API_CART_VIEW=/api/cart/view.php
+NEXT_PUBLIC_API_CHECKOUT=/api/checkout/checkout.php
+NEXT_PUBLIC_API_ORDERS_LIST=/api/orders/list.php
+
 # ... other endpoints
 ```
 
