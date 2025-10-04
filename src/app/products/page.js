@@ -1,11 +1,11 @@
-import HomeBanner from "@/widgets/HomeBanner";
+import ProductsBanner from "@/widgets/ProductsBanner";
 import ProductList from "@/widgets/ProductList";
 
-export default function Home() {
+export default function Products() {
   return (
     <main className="min-h-screen">
       {/* Hero Banner */}
-        <HomeBanner />
+        <ProductsBanner />
     
       {/* Products Section */}
       <ProductList />

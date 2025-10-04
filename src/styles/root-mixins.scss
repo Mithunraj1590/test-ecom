@@ -1,0 +1,84 @@
+@use "sass:map";
+@import './variables.scss';
+
+$base-size: 16;
+// Responsive container mixin with dynamic padding
+@mixin responsive-container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+  position: relative;
+  
+  @each $breakpoint, $width in $container-max-widths {
+    @if $breakpoint == sm {
+      @media (min-width: map-get($grid-breakpoints, sm)) {
+        max-width: $width;
+        padding: 0 20px;
+      }
+    } @else if $breakpoint == md {
+      @media (min-width: map-get($grid-breakpoints, md)) {
+        max-width: $width;
+        padding: 0 25px;
+      }
+    } @else if $breakpoint == lg {
+      @media (min-width: map-get($grid-breakpoints, lg)) {
+        max-width: $width;
+        padding: 0 30px;
+      }
+    } @else if $breakpoint == xl {
+      @media (min-width: map-get($grid-breakpoints, xl)) {
+        max-width: $width;
+        padding: 0 35px;
+      }
+    } @else if $breakpoint == xxl {
+      @media (min-width: map-get($grid-breakpoints, xxl)) {
+        max-width: $width;
+        padding: 0 40px;
+      }
+    }
+  }
+}
+
+// Fluid container mixin (no max-width constraints)
+@mixin container-fluid {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+// Responsive Font Size Mixin
+@mixin responsive-font-size($sizes) {
+  // Base size (null key)
+  @if map.has-key($sizes, null) {
+    font-size: #{map-get($sizes, null)}px;
+  }
+
+  // Loop through other breakpoints
+  @each $breakpoint, $size in $sizes {
+    @if $breakpoint != null {
+      @media (min-width: #{$breakpoint}px) {
+        font-size: #{$size}px;
+      }
+    }
+  }
+}
+
+
+
+
+// Heading Mixin
+@mixin heading($level) {
+  font-family: "Urbanist", sans-serif;
+  color: $h-color;
+  font-weight: 700;
+  line-height: 1.2;
+  // margin: 0;
+
+  @if map-has-key($h-sizes, $level) {
+    @include responsive-font-size(map.get($h-sizes, $level));
+  } @else {
+    @warn "Heading level #{$level} not found in \$h-sizes map.";
+  }
+}

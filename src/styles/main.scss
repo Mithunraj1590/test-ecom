@@ -1,0 +1,41 @@
+@import './variables.scss';
+@import './root-mixins.scss';
+
+*{
+    box-sizing: border-box;
+   
+    
+}
+body{
+    background-color:  var( --primary);
+    font-family: var(--font-primary);
+}
+
+.container{
+    margin: auto;
+    padding: 0 15px;
+}
+.h1 {
+    @include heading(1);
+  }
+  
+  .h2 {
+    @include heading(2);
+  }
+  
+  .h3 {
+    @include heading(3);
+  }
+  
+  .h4 {
+    @include heading(4);
+  }
+  
+  .h5 {
+    @include heading(5);
+  }
+  
+  .h6 {
+    @include heading(6);
+  }
+  

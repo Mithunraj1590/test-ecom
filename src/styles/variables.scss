@@ -1,0 +1,56 @@
+// Breakpoints
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1420px,
+);
+
+// Container Max Widths
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1400px
+);
+
+// Heading sizes map
+$h-sizes: (
+  1: (
+    null: 28,
+    992: 35,
+    1200: 50,
+    1600: 72,
+  ),
+  2: (
+    null: 24,
+    992: 26,
+    1200: 32,
+    1600: 36,
+  ),
+  3: (
+    null: 20,
+    992: 26,
+    1200: 32,
+  ),
+  4: (
+    null: 18,
+    992: 20,
+    1200: 24,
+  ),
+  5: (
+    null: 18,
+    768: 24,
+    1200: 30,
+  ),
+  6: (
+    null: 16,
+    992: 18,
+  ),
+);
+
+// Heading color
+$h-color: #111827;
